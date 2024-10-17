@@ -4,7 +4,7 @@ import android.content.res.Resources
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
-fun Resources.readJsonFromRaw(fileId: Int): String {
+fun Resources.readStringFromRaw(fileId: Int): String {
     val inputStream = openRawResource(fileId)
     val reader = BufferedReader(InputStreamReader(inputStream))
     val stringBuilder = StringBuilder()
