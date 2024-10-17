@@ -27,7 +27,7 @@ class MainViewModel(private val applicationContext: Context) : ViewModel() {
 
     private fun loadListPage() {
         val beneficiariesJson = applicationContext.resources.readStringFromRaw(R.raw.beneficiaries)
-        _pageState.value = MainPageState.ListPage(Beneficiary.parseFromJson(beneficiariesJson))
+        _pageState.value = MainPageState.ListPage(Beneficiary.parseListFromJson(beneficiariesJson))
     }
 
     object CreationFactory : ViewModelProvider.Factory {

@@ -15,7 +15,7 @@ data class Beneficiary(
 ) {
 
     companion object {
-        fun parseFromJson(jsonString: String): List<Beneficiary> {
+        fun parseListFromJson(jsonString: String): List<Beneficiary> {
             val beneficiaries = mutableListOf<Beneficiary>()
 
             val jsonArray = JSONArray(jsonString)
