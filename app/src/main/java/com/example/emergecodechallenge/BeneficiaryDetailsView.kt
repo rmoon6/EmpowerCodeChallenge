@@ -19,6 +19,7 @@ class BeneficiaryDetailsView(
             ViewGroup.LayoutParams.WRAP_CONTENT
         )
 
+        addView(createDetailTextView("Name: ${beneficiary.firstName} ${beneficiary.lastName}"))
         addView(createDetailTextView("SSN: ${beneficiary.socialSecurityNumber}"))
         addView(createDetailTextView("Date of Birth: ${formatDateOfBirth(beneficiary.dateOfBirth)}"))
         addView(createDetailTextView("Phone: ${formatPhoneNumber(beneficiary.phoneNumber)}"))
