@@ -7,11 +7,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.CreationExtras
 
-sealed interface MainPageState {
-    data class ListPage(val beneficiaries: List<Beneficiary>) : MainPageState
-    data class BeneficiaryDetailsPage(val beneficiary: Beneficiary) : MainPageState
-}
-
 class MainViewModel(private val applicationContext: Context) : ViewModel() {
 
     val pageState: LiveData<MainPageState> get() = pageState
