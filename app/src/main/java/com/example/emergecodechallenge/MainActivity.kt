@@ -32,6 +32,14 @@ class MainActivity : androidx.activity.ComponentActivity() {
         }
     }
 
+    override fun onBackPressed() {
+        when (viewModel.pageState.value) {
+            is ListPage -> super.onBackPressed()
+            is BeneficiaryDetailsPage -> viewModel.beneficiaryDetailsExited()
+            null -> {}
+        }
+    }
+
     private fun showListPage(listPage: ListPage) {
         val beneficiaryListView = BeneficiaryListView(this, listPage.beneficiaries) { beneficiary ->
             viewModel.beneficiarySelected(beneficiary)
