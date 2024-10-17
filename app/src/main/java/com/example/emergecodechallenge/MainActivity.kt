@@ -33,10 +33,16 @@ class MainActivity : androidx.activity.ComponentActivity() {
     }
 
     private fun showListPage(listPage: ListPage) {
-        TODO("STOPSHIP")
+        val beneficiaryListView = BeneficiaryListView(this, listPage.beneficiaries) { beneficiary ->
+            viewModel.beneficiarySelected(beneficiary)
+        }
+        mainFrameLayout.removeAllViews()
+        mainFrameLayout.addView(beneficiaryListView)
     }
 
     private fun showDetailsPage(beneficiaryDetailsPage: BeneficiaryDetailsPage) {
-        TODO("STOPSHIP")
+        val beneficiaryDetailsView = BeneficiaryDetailsView(this, beneficiaryDetailsPage.beneficiary)
+        mainFrameLayout.removeAllViews()
+        mainFrameLayout.addView(beneficiaryDetailsView)
     }
 }
