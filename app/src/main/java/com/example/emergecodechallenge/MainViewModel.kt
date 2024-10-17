@@ -7,14 +7,28 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.CreationExtras
 
+sealed interface MainPageState {
+    data class ListPage(val beneficiaries: List<Beneficiary>) : MainPageState
+    data class BeneficiaryDetailsPage(val beneficiary: Beneficiary) : MainPageState
+}
+
 class MainViewModel(private val applicationContext: Context) : ViewModel() {
 
-    val beneficiaries: LiveData<List<Beneficiary>> get() = _beneficiaries
-    private val _beneficiaries = MutableLiveData<List<Beneficiary>>()
+    val pageState: LiveData<MainPageState> get() = pageState
 
-    init {
+    private val _pageState = MutableLiveData<MainPageState>()
+
+    fun beneficiarySelected(beneficiary: Beneficiary) {
+        _pageState.value = MainPageState.BeneficiaryDetailsPage(beneficiary)
+    }
+
+    fun beneficiaryDetailsExited() {
+        loadListPage()
+    }
+
+    private fun loadListPage() {
         val beneficiariesJson = applicationContext.resources.readStringFromRaw(R.raw.beneficiaries)
-        _beneficiaries.value = Beneficiary.parseFromJson(beneficiariesJson)
+        _pageState.value = MainPageState.ListPage(Beneficiary.parseFromJson(beneficiariesJson))
     }
 
     object CreationFactory : ViewModelProvider.Factory {

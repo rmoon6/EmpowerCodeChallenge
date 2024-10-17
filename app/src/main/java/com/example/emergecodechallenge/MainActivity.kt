@@ -9,7 +9,7 @@ class MainActivity : androidx.activity.ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel.beneficiaries.observe(this) {
+        viewModel.pageState.observe(this) {
             TODO("STOPSHIP")
         }
     }
