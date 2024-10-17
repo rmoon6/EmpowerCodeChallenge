@@ -11,13 +11,17 @@ class MainViewModel(private val applicationContext: Context) : ViewModel() {
 
     val pageState: LiveData<MainPageState> get() = _pageState
 
-    private val _pageState = MutableLiveData<MainPageState>()
-
     fun beneficiarySelected(beneficiary: Beneficiary) {
         _pageState.value = MainPageState.BeneficiaryDetailsPage(beneficiary)
     }
 
     fun beneficiaryDetailsExited() {
+        loadListPage()
+    }
+
+    private val _pageState = MutableLiveData<MainPageState>()
+
+    init {
         loadListPage()
     }
 
