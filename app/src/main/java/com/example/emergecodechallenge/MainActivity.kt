@@ -2,11 +2,12 @@ package com.example.emergecodechallenge
 
 import android.os.Bundle
 import android.widget.FrameLayout
+import androidx.activity.ComponentActivity
 import androidx.activity.viewModels
 import com.example.emergecodechallenge.MainPageState.BeneficiaryDetailsPage
 import com.example.emergecodechallenge.MainPageState.ListPage
 
-class MainActivity : androidx.activity.ComponentActivity() {
+class MainActivity : ComponentActivity() {
 
     private val viewModel: MainViewModel by viewModels { MainViewModel.CreationFactory }
 
