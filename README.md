@@ -11,3 +11,5 @@
   - Would also facilitate unit testing
 
 - The view model could be unit tested
+
+If you have any issues running this, please reach out to me
