@@ -1,11 +1,11 @@
-package com.example.emergecodechallenge
+package com.example.empowercodechallenge
 
 import android.os.Bundle
 import android.widget.FrameLayout
 import androidx.activity.ComponentActivity
 import androidx.activity.viewModels
-import com.example.emergecodechallenge.MainPageState.BeneficiaryDetailsPage
-import com.example.emergecodechallenge.MainPageState.ListPage
+import com.example.empowercodechallenge.MainPageState.BeneficiaryDetailsPage
+import com.example.empowercodechallenge.MainPageState.ListPage
 
 class MainActivity : ComponentActivity() {
 

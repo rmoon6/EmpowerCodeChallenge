@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.emergecodechallenge"
+    namespace = "com.example.empowercodechallenge"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.emergecodechallenge"
+        applicationId = "com.example.empowercodechallenge"
         minSdk = 26
         targetSdk = 34
         versionCode = 1

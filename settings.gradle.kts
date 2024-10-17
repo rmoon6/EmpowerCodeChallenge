@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Emerge Code Challenge"
+rootProject.name = "Empower Code Challenge"
 include(":app")
  

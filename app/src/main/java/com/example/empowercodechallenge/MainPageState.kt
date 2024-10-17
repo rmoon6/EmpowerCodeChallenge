@@ -1,4 +1,4 @@
-package com.example.emergecodechallenge
+package com.example.empowercodechallenge
 
 sealed interface MainPageState {
     data class ListPage(val beneficiaries: List<Beneficiary>) : MainPageState
