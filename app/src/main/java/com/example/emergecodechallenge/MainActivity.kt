@@ -1,13 +1,16 @@
 package com.example.emergecodechallenge
 
 import android.os.Bundle
-import androidx.core.app.ComponentActivity
+import androidx.activity.viewModels
 
-class MainActivity : ComponentActivity() {
+class MainActivity : androidx.activity.ComponentActivity() {
+
+    private val viewModel: MainViewModel by viewModels { MainViewModel.CreationFactory }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // TODO STOPSHIP setup the view or whatever
+        viewModel.beneficiaries.observe(this) {
+            TODO("STOPSHIP")
+        }
     }
 }
-
