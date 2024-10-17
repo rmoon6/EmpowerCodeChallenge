@@ -9,7 +9,7 @@ import androidx.lifecycle.viewmodel.CreationExtras
 
 class MainViewModel(private val applicationContext: Context) : ViewModel() {
 
-    val pageState: LiveData<MainPageState> get() = pageState
+    val pageState: LiveData<MainPageState> get() = _pageState
 
     private val _pageState = MutableLiveData<MainPageState>()
 
